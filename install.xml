@@ -40,7 +40,7 @@
 							}
 						}
 
-						if($currencies){
+						if ($currencies) {
 							$curl = curl_init();
 
 							curl_setopt($curl, CURLOPT_URL, 'https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json');
@@ -58,12 +58,12 @@
 
                             if (isset($response_info[0]['cc'])) {
                                 foreach ($currencies as $currency) {
-    							    $key = array_search($currency['code'], array_column($response_info, 'cc')); 
+                                    $key = array_search($currency['code'], array_column($response_info, 'cc')); 
     
     								if (isset($response_info[$key]['rate'])) {
-    									$this->editValueByCode($currency['code'], 1 / $response_info[$key]['rate']);
+                                        $this->editValueByCode($currency['code'], 1 / $response_info[$key]['rate']);
     								}
-    							}
+                                }
                             }
 						
 							$this->cache->delete('currency');
