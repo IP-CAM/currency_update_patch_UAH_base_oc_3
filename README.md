@@ -1,1 +1,3 @@
-# currency_update_patch_UAH_base_oc_3
+# Opencart 3 currency update patch (UAH currency based).
+
+Works via https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?json
